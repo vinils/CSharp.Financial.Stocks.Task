@@ -6,7 +6,7 @@ namespace CSharp.Financial.Stocks.Task
     using System.IO;
     using System.Linq;
 
-    class Program
+    public class Program
     {
         public class DataAtivaTrade
         {
@@ -15,7 +15,7 @@ namespace CSharp.Financial.Stocks.Task
             public decimal Value { get; set; }
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //// The code provided will print ‘Hello World’ to the console.
             //// Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
