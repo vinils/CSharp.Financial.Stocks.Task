@@ -106,11 +106,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSharp.Data.Client\CSharp.Data.Client\CSharp.Data.Client.csproj">
+    <ProjectReference Include="$(SolutionDir)\CSharp.Data.Client\CSharp.Data.Client\CSharp.Data.Client.csproj">
       <Project>{679caed8-ee91-4117-a573-31171c4e652a}</Project>
       <Name>CSharp.Data.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CSharp.MercadoFinanceiro\CSharp.MercadoFinanceiro.csproj">
+    <ProjectReference Include="$(SolutionDir)\CSharp.MercadoFinanceiro\CSharp.MercadoFinanceiro.csproj">
       <Project>{570fa6fc-1c37-4761-8aae-699ce8a36eb6}</Project>
       <Name>CSharp.MercadoFinanceiro</Name>
     </ProjectReference>
