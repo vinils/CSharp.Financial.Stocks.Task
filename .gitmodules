@@ -2,3 +2,6 @@
 	path = CSharp.Data.Client
 	url = https://github.com/vinils/CSharp.Data.Client.git
 	branch = master
+[submodule "CSharp.MercadoFinanceiro"]
+	path = CSharp.MercadoFinanceiro
+	url = https://github.com/vinils/CSharp.MercadoFinanceiro.git
