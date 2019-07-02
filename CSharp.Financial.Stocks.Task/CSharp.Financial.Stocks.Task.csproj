@@ -111,7 +111,7 @@
       <Name>CSharp.Data.Client</Name>
     </ProjectReference>
     <ProjectReference Include="$(SolutionDir)\CSharp.MercadoFinanceiro\CSharp.MercadoFinanceiro.csproj">
-      <Project>{570fa6fc-1c37-4761-8aae-699ce8a36eb6}</Project>
+      <Project>{f59ff40a-f437-4ac8-b46f-f50ff8365a18}</Project>
       <Name>CSharp.MercadoFinanceiro</Name>
     </ProjectReference>
   </ItemGroup>
