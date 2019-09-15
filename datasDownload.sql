@@ -4,7 +4,7 @@ format(CollectionDate,'yyyy-MM-dd HH:mm:ss') + ''', ' +
 isnull('''' + Convert(nvarchar(100), DecimalValue) + '''', 'NULL') + ', '
 + ISNULL('''' + StringValue + '''', 'NULL') + ', '''
 + Discriminator + ''')'
-from [DataContextContext-20180321055800]..[Data]
+from [Data]
 where GroupId in (
 '63DBE169-40F3-49E8-9DA7-8A4A192BEDB3',
 '3B2DCB01-B756-477F-B9D6-5137E38DE2A1',
