@@ -16,7 +16,7 @@
             if (!Is(desc))
                 throw new ArgumentException();
 
-            var pregao = Convert.ToDateTime(desc.Substring(strStart.Length), new System.Globalization.CultureInfo("pt-BR"));
+            var pregao = Convert.ToDateTime(desc.Substring(strStart.Length));
 
             return new NotaIRRF(desc, pregao);
         }

@@ -17,17 +17,17 @@
             var xlRange = xlWorksheet.UsedRange;
 
             var row = 3;
-            var liquidacao = ((string)xlRange.Cells[row, 1].Value2).GetValueOrNull<DateTime>(new CultureInfo("pt-BR"));
+            var liquidacao = ((string)xlRange.Cells[row, 1].Value2).GetValueOrNull<DateTime>();
 
             while (liquidacao.HasValue)
             {
                 var liquidacaoDate = liquidacao.Value;
-                var movimentacao = Convert.ToDateTime(xlRange.Cells[row, 2].Value2, new CultureInfo("pt-BR"));
+                var movimentacao = Convert.ToDateTime(xlRange.Cells[row, 2].Value2);
                 var descricao = ((string)xlRange.Cells[row, 3].Value2).Trim().RemoveDuplicateSpaces();
-                var saldo = ((string)xlRange.Cells[row, 6].Value2).Replace(".", "").GetValueOrNull<decimal>(new CultureInfo("pt-BR"));
+                var saldo = ((string)xlRange.Cells[row, 6].Value2).Replace(".", "").GetValueOrNull<decimal>();
 
-                var debito = ((string)xlRange.Cells[row, 4].Value2).GetValueOrNull<decimal>(new CultureInfo("pt-BR"));
-                var credito = ((string)xlRange.Cells[row, 5].Value2).GetValueOrNull<decimal>(new CultureInfo("pt-BR"));
+                var debito = ((string)xlRange.Cells[row, 4].Value2).GetValueOrNull<decimal>();
+                var credito = ((string)xlRange.Cells[row, 5].Value2).GetValueOrNull<decimal>();
 
                 if (!debito.HasValue && !credito.HasValue || (debito.Value > 0 && credito < 0))
                 {
@@ -44,7 +44,7 @@
                 ret.Add(newCC);
 
                 row++;
-                liquidacao = ((string)xlRange.Cells[row, 1].Value2).GetValueOrNull<DateTime>(new CultureInfo("pt-BR"));
+                liquidacao = ((string)xlRange.Cells[row, 1].Value2).GetValueOrNull<DateTime>();
             }
 
             return ret;

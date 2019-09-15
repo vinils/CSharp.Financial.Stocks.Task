@@ -18,7 +18,7 @@
                 && !(estorno != null && IsEstornoSemData(desc)))
                 throw new ArgumentException();
 
-            var periodo = desc.LastWord().Replace("Ref.:", "").GetValueOrNull<DateTime>(new CultureInfo("pt-BR"));
+            var periodo = desc.LastWord().Replace("Ref.:", "").GetValueOrNull<DateTime>();
 
             var month = periodo?.Month;
             var year = periodo?.Year;

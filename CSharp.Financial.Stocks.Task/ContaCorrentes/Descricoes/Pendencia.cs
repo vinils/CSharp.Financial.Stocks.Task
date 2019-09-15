@@ -36,7 +36,7 @@
                 throw new ArgumentException();
 
             var strMeio = " DE ";
-            var pregao = Convert.ToDateTime(desc.NextWord(length.Value), new System.Globalization.CultureInfo("pt-BR"));
+            var pregao = Convert.ToDateTime(desc.NextWord(length.Value));
             var codigoAcao = desc.LastWord();
             var quantidade = Convert.ToInt32(desc.LastWord(desc.Length - codigoAcao.Length - strMeio.Length));
 
