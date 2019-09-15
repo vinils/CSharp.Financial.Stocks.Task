@@ -22,7 +22,7 @@ namespace CSharp.Financial.Stocks.Task
             //Console.WriteLine("Hello World!");
             //Console.ReadKey();
 
-            var contaCorrente = new ContaCorrenteCollection(@"U:\DADOS\Pessoal\Documentos\Financeiro\ComprovantesInvestimentosAcoes\ExtratoContaCorrente\20070730_20190426.xls");
+            var contaCorrente = new ContaCorrenteCollection(Directory.GetCurrentDirectory() + @"\ExtratoContaCorrente\20070730_20190426.xls");
 
             var transferencias = contaCorrente.Transferencias;
             var transferenciasEstornos = transferencias.Where(t => t.Estorno != null);
@@ -213,7 +213,7 @@ namespace CSharp.Financial.Stocks.Task
             /////////////////////////////////////////////////
 
             var corretagem = new CorretagemNota(
-                new DirectoryInfo(@"U:\DADOS\Pessoal\Documentos\Financeiro\ComprovantesInvestimentosAcoes\NotasCorretagem"),
+                new DirectoryInfo(Directory.GetCurrentDirectory() + @"\NotasCorretagem"),
                 60);
 
             var crgNotas = corretagem;
