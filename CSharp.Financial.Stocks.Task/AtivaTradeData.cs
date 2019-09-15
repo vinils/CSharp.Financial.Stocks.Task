@@ -57,7 +57,7 @@
     }
     public class AtivaTradeData
     {
-        private static readonly string[] rootPath = new string[] { "AtivaTrade" };
+        private static readonly string[] rootPath = new string[] { "Stocks" };
         private static readonly Guid AtivaTradeGroupId = new Guid("63DBE169-40F3-49E8-9DA7-8A4A192BEDB3");
         private static string TreatIndex(string text)
         {
@@ -176,7 +176,7 @@
             DataBulkInsert(Datas, TreatIndex);
         }
 
-        private static DictionaryTree<string, string> Groups = new DictionaryTree<string, string>(s => TreatIndex(s), "AtivaTrade2");
+        private static DictionaryTree<string, string> Groups = new DictionaryTree<string, string>(s => TreatIndex(s), "AtivaTrade");
         public static List<AtivaTradeData> Datas = new List<AtivaTradeData>();
         private static void Add(string[] groupPath, DateTime date, decimal value)
         {
