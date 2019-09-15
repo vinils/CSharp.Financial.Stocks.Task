@@ -24,14 +24,18 @@
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
-        public static T? GetValueOrNull<T>(this string valueAsString)
+        public static T? GetValueOrNull<T>(this string valueAsString, IFormatProvider provider = null)
             where T : struct
         {
             if (string.IsNullOrEmpty(valueAsString))
                 return null;
+
+            if (provider == null)
+                provider = CultureInfo.CurrentCulture;
+
             try
             {
-                return (T)Convert.ChangeType(valueAsString, typeof(T));
+                return (T)Convert.ChangeType(valueAsString, typeof(T), provider);
             }
             catch (Exception)
             {
