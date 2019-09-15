@@ -59,7 +59,7 @@
     {
         private static readonly string[] rootPath = new string[] { "Stocks" };
         private static readonly Guid AtivaTradeGroupId = new Guid("63DBE169-40F3-49E8-9DA7-8A4A192BEDB3");
-        private static readonly string URI = Environment.GetEnvironmentVariable("DATA_POINT");
+        private static readonly string DATA_POINT = Environment.GetEnvironmentVariable("DATA_POINT");
         private static string TreatIndex(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -98,7 +98,7 @@
 
             request.AddJsonBody(body);
 
-            var url = $"http://{URI}/odata/v4/groups/BulkInsertByName";
+            var url = $"http://{DATA_POINT}/odata/v4/groups/BulkInsertByName";
             //var url = "http://192.168.15.250/data/odata/v4/groups/BulkInsertByName";
             var restClient = new RestClient(url);
             var response = restClient
@@ -115,7 +115,7 @@
                 return;
 
             //var dataUriStr = "http://192.168.15.250/data/odata/v4";
-            var dataUriStr = $"http://{URI}/odata/v4";
+            var dataUriStr = $"http://{DATA_POINT}/odata/v4";
             var dataUri = new Uri(dataUriStr);
             var container = new Default.Container(dataUri)
             {
