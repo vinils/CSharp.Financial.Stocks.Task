@@ -39,7 +39,7 @@
             }
             catch (Exception)
             {
-                return default(T);
+                return null;
             }
         }
 

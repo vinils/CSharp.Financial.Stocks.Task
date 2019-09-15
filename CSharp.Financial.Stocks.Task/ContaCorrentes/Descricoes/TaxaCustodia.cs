@@ -1,6 +1,7 @@
 ﻿namespace CSharp.Financial.Stocks.Task.ContaCorrentes.Descricoes
 {
     using System;
+    using System.Globalization;
 
     public class TaxaCustodia : Descricao
     {
@@ -17,7 +18,7 @@
                 && !(estorno != null && IsEstornoSemData(desc)))
                 throw new ArgumentException();
 
-            var periodo = desc.LastWord().Replace("Ref.:", "").GetValueOrNull<DateTime>();
+            var periodo = desc.LastWord().Replace("Ref.:", "").GetValueOrNull<DateTime>(new CultureInfo("pt-BR"));
 
             var month = periodo?.Month;
             var year = periodo?.Year;

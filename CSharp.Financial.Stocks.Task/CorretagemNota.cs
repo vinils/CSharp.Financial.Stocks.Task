@@ -5,6 +5,7 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
 
     public class CorretagemNota : IEnumerable<Nota>
@@ -49,8 +50,8 @@
                         {
                             var isVenda = ((string)xlRange.Cells[row, 2].Value2).Trim() == "V";
                             var codigoAcao = column4Value.NextWord();
-                            var quantidade = ((string)xlRange.Cells[row, 6].Value2).Replace(".", "").GetValueOrNull<int>();
-                            var preco = ((string)xlRange.Cells[row, 7].Value2).Replace(".", "").GetValueOrNull<decimal>();
+                            var quantidade = ((string)xlRange.Cells[row, 6].Value2).Replace(".", "").GetValueOrNull<int>(new CultureInfo("pt-BR"));
+                            var preco = ((string)xlRange.Cells[row, 7].Value2).Replace(".", "").GetValueOrNull<decimal>(new CultureInfo("pt-BR"));
 
                             //if (lastOperacoes == null)
                             //{
@@ -105,7 +106,7 @@
                                      out decimal? corretagemMaisIss,
                                      out decimal? valorLiquidacao)
         {
-            decimal? GetValueOrNull(dynamic value) => ((string)value).Replace(".", ",").Replace("D", "").Replace("C", "").GetValueOrNull<decimal>();
+            decimal? GetValueOrNull(dynamic value) => ((string)value).Replace(".", ",").Replace("D", "").Replace("C", "").GetValueOrNull<decimal>(new CultureInfo("pt-BR"));
 
             vendasAVista = GetValueOrNull(xlRange.Cells[resumoDosNegociosRow + 1, 4].Value2);
             iRRFSobreVendDayTrade = GetValueOrNull(xlRange.Cells[resumoDosNegociosRow + 6, 4].Value2);
