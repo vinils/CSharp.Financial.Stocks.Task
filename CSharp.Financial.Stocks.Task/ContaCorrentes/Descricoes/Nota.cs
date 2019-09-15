@@ -17,7 +17,7 @@
             var nrNotaStrStart = desc.Substring(descriptionStart.Length);
             var nrNotaEndIndex = nrNotaStrStart.IndexOf(' ');
             var nrNota = Convert.ToInt32(nrNotaStrStart.Substring(0, nrNotaEndIndex));
-            var pregao = Convert.ToDateTime(nrNotaStrStart.Substring(nrNotaStrStart.Length - 10, 10));
+            var pregao = Convert.ToDateTime(nrNotaStrStart.Substring(nrNotaStrStart.Length - 10, 10), new System.Globalization.CultureInfo("pt-BR"));
 
             return new Nota(desc, nrNota, pregao);
         }

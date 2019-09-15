@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using Microsoft.Office.Interop.Excel;
 
@@ -16,12 +17,12 @@
             var xlRange = xlWorksheet.UsedRange;
 
             var row = 3;
-            var liquidacao = ((string)xlRange.Cells[row, 1].Value2).GetValueOrNull<DateTime>();
+            var liquidacao = ((string)xlRange.Cells[row, 1].Value2).GetValueOrNull<DateTime>(new CultureInfo("pt-BR"));
 
             while (liquidacao.HasValue)
             {
                 var liquidacaoDate = liquidacao.Value;
-                var movimentacao = Convert.ToDateTime(xlRange.Cells[row, 2].Value2);
+                var movimentacao = Convert.ToDateTime(xlRange.Cells[row, 2].Value2, new CultureInfo("pt-BR"));
                 var descricao = ((string)xlRange.Cells[row, 3].Value2).Trim().RemoveDuplicateSpaces();
                 var saldo = ((string)xlRange.Cells[row, 6].Value2).Replace(".", "").GetValueOrNull<decimal>();
 
