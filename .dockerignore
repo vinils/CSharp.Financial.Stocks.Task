@@ -1,0 +1,24 @@
+# directories
+packages/
+bin/
+obj/
+out/
+.vs/
+.git/
+
+# files
+Dockerfile*
+*.trx
+*.md
+
+
+CSharp.Financial.Stocks.Task/bin/
+CSharp.Financial.Stocks.Task/obj/
+CSharp.Financial.Stocks.Task/out/
+CSharp.Financial.Stocks.Task/.vs/
+CSharp.Financial.Stocks.Task/.git/
+CSharp.Data.Client/bin/
+CSharp.Data.Client/obj/
+CSharp.Data.Client/out/
+CSharp.Data.Client/.vs/
+CSharp.Data.Client/.git/
