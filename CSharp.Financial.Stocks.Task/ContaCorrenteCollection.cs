@@ -10,6 +10,8 @@
     {
         public static List<MercadoFinanceiro.Entities.ContaCorrente> CastExcel(string excelFilePath)
         {
+            Console.WriteLine("ContaCorrente Excel file path: {0}", excelFilePath);
+
             var ret = new List<MercadoFinanceiro.Entities.ContaCorrente>();
             var xlApp = new Application();
             var xlWorkbook = xlApp.Workbooks.Open(excelFilePath);
