@@ -22,3 +22,6 @@ WORKDIR /app
 RUN msbuild /p:Configuration=Release
 
 CMD ".\\CSharp.Financial.Stocks.Task\\bin\\Release\\CSharp.Financial.Stocks.Task.exe"
+
+#docker run -it --volume=c:\:c:\test vinils/csharp-saude-fitbittask cmd
+#net use z: \\servernameOrIp\z$ /user:Administrator Password
